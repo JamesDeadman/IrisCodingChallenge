@@ -86,17 +86,17 @@ namespace IrisCodingChallenge.Views
             double vertexWidth = ActualWidth / (WorldGeometry.XMax + 1);
             double vertexHeight = ActualHeight / (WorldGeometry.YMax + 1);
 
-            Point startPoint = new Point(vertexWidth * (previousVertex.X - .5), vertexHeight * (previousVertex.Y - .5));
+            Point startPoint = new Point(vertexWidth * (previousVertex.X + .5), vertexHeight * (previousVertex.Y + .5));
 
             foreach (Vertex vertex in Route.Verticies.Skip(1))
             {
-                Point point1 = new Point(vertexWidth * (vertex.X - .5), vertexHeight * (vertex.Y - .5));
-                Point point2 = new Point(vertexWidth * (previousVertex.X - .5), vertexHeight * (previousVertex.Y - .5));
+                Point point1 = new Point(vertexWidth * (vertex.X + .5), vertexHeight * (vertex.Y + .5));
+                Point point2 = new Point(vertexWidth * (previousVertex.X + .5), vertexHeight * (previousVertex.Y + .5));
                 context.DrawLine(pen, point1, point2);
                 previousVertex = vertex;
             }
 
-            Point endPoint = new Point(vertexWidth * (previousVertex.X - .5), vertexHeight * (previousVertex.Y - .5));
+            Point endPoint = new Point(vertexWidth * (previousVertex.X + .5), vertexHeight * (previousVertex.Y + .5));
             
             context.DrawEllipse(Brushes.Red, null, startPoint, vertexWidth / 4, vertexHeight / 4);
             context.DrawEllipse(Brushes.Blue, null, endPoint, vertexWidth / 4, vertexHeight / 4);

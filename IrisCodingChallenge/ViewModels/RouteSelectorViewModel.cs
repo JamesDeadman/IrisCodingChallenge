@@ -22,8 +22,8 @@ namespace IrisCodingChallenge.ViewModels
             GraphWorldMap worldMap = new GraphWorldMap(30, 30, 4, 15);
             DijkstraRouteSelector routeSelector = new DijkstraRouteSelector(worldMap);
 
-            StartVertex = worldMap.GetVertex(27, 2);
-            EndVertex = worldMap.GetVertex(5, 26);
+            StartVertex = worldMap.GetVertex(3, 24);
+            EndVertex = worldMap.GetVertex(27, 2);
             Route = routeSelector.GetRoute(StartVertex, EndVertex);
 
             RouteSelector = routeSelector;

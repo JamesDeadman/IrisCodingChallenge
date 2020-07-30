@@ -65,6 +65,7 @@ namespace IrisCodingChallenge.Models
                 route.Verticies.Add(pathVertex);
                 pathVertex = table[pathVertex].PreviousVertex;
             } while (pathVertex != startVertex);
+            route.Verticies.Add(pathVertex);
             route.Verticies.Reverse();
 
             return route;
