@@ -1,0 +1,12 @@
+﻿<Window x:Class="IrisCodingChallenge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IrisCodingChallenge" xmlns:views="clr-namespace:IrisCodingChallenge.Views"
+        mc:Ignorable="d"
+        Title="Iris Coding Challenge" Height="600" Width="600">
+    <Grid>
+        <views:RouteSelectorVisualizer x:Name="Visualizer" Route="{Binding Route}" WorldGeometry="{Binding World}" StartVertex="{Binding StartVertex}" EndVertex="{Binding EndVertex}" />
+    </Grid>
+</Window>
